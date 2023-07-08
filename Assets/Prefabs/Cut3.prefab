@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4201911396768033437}
   m_Layer: 0
   m_Name: Cut3
-  m_TagString: Untagged
+  m_TagString: smallcut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
