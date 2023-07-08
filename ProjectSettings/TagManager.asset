@@ -4,14 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< Updated upstream
-  - smallcut
   - middlecut
   - bigcut
-  - notactive
-=======
+  - smallcut
   - ground
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
