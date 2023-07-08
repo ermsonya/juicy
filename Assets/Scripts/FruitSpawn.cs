@@ -8,16 +8,20 @@ public class FruitSpawn : MonoBehaviour
     [SerializeField] private List<GameObject> fruitPrefabs;
     [SerializeField] private List<Collider2D> groundColliders;
 
-    public float fruitSpeed = 4;
+    public float fruitSpeed = 9;
+    public float maxDistance = 2f;
 
     private Camera _mainCamera;
 
     private GameObject _mainFruit;
     private Rigidbody2D _fruitRigidbody2D;
     private Collider2D _fruitCollider2D;
+    private Transform _fruitTransform;
 
     private Vector3 _startPos;
     private Vector3 _endPos;
+    Vector3 _fruitDirection;
+
     private int _fruitIndex = 1;
     private bool _isPressed;
     private bool _isFly;
@@ -82,6 +86,7 @@ public class FruitSpawn : MonoBehaviour
         _fruitRigidbody2D.constraints = RigidbodyConstraints2D.FreezePosition;
 
         _fruitCollider2D = _mainFruit.GetComponent<Collider2D>();
+        _fruitTransform = _mainFruit.transform;
     }
 
     private void FruitMove()
@@ -95,10 +100,17 @@ public class FruitSpawn : MonoBehaviour
             _isPressed = true;
         }
 
+
         if (_isPressed)
         {
             Vector3 pos = GetMousePosition();
-            _mainFruit.transform.position = pos;
+            _fruitDirection = pos - _startPos;
+            Debug.Log(_fruitDirection + " " + _fruitDirection.magnitude);
+
+            if (_fruitDirection.magnitude <= maxDistance)
+                _fruitTransform.position = transform.position + pos - _startPos;
+            else
+                _fruitTransform.position = transform.position + (pos - _startPos).normalized * maxDistance;
         }
 
         if (Input.GetKeyUp(KeyCode.Mouse0))
@@ -107,10 +119,13 @@ public class FruitSpawn : MonoBehaviour
             _isFly = true;
             _endPos = GetMousePosition();
 
-            Vector3 direction = _endPos - _startPos;
+            if (_fruitDirection.magnitude < maxDistance)
+                _fruitDirection = _endPos - _startPos;
+            else
+                _fruitDirection = (_endPos - _startPos).normalized * maxDistance;
 
             _fruitRigidbody2D.constraints = RigidbodyConstraints2D.None;
-            _fruitRigidbody2D.AddForce(-direction * fruitSpeed, ForceMode2D.Impulse);
+            _fruitRigidbody2D.AddForce(-_fruitDirection * fruitSpeed, ForceMode2D.Impulse);
         }
     }
 
