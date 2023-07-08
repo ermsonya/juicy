@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5993976252443041018}
   - component: {fileID: 5706884638724084069}
   - component: {fileID: 2405509219027503312}
+  - component: {fileID: -1084763234536152571}
   m_Layer: 0
   m_Name: Cut2
   m_TagString: bigcut
@@ -120,3 +121,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.57, y: 2.27}
   m_Direction: 0
+--- !u!114 &-1084763234536152571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443589958855197807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b4a6005c0c0f346961754ff2df1f4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

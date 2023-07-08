@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6172810303184503254}
   - component: {fileID: 5883317494845511173}
   - component: {fileID: -627776522654994733}
+  - component: {fileID: 261083425102740151}
   m_Layer: 0
   m_Name: FruitBig
-  m_TagString: bigfruit
+  m_TagString: bigcut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,3 +149,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.49999997
+--- !u!114 &261083425102740151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7183773035997239112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b4a6005c0c0f346961754ff2df1f4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

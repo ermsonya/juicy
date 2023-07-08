@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3527731147344831189}
   - component: {fileID: 566857943412443102}
   - component: {fileID: -7379510843920255741}
+  - component: {fileID: -8864908491084052127}
   m_Layer: 0
   m_Name: FruitMedium
-  m_TagString: mediumfruit
+  m_TagString: middlecut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,3 +149,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-8864908491084052127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6039698189507636293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b4a6005c0c0f346961754ff2df1f4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5573418388402001638}
   - component: {fileID: -1869670420426770559}
   - component: {fileID: 233474451237988127}
+  - component: {fileID: 8665549617021969975}
   m_Layer: 0
   m_Name: FruitSmall
-  m_TagString: smallfruit
+  m_TagString: smallcut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,3 +149,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &8665549617021969975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7419802639224045113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b4a6005c0c0f346961754ff2df1f4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
