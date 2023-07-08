@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdfaf84f-57a7-4c70-86e5-46f096ba9226" name="Changes" comment="" />
+    <list default="true" id="cdfaf84f-57a7-4c70-86e5-46f096ba9226" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.juicy/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.juicy/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.juicy/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/FruitBig.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/FruitBig.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/FruitMedium.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/FruitMedium.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/FruitSmall.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/FruitSmall.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/FruitSpawn.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FruitSpawn.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FruitSpawn.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/menu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/juicy.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/juicy.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FruitSpawn.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +32,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CutAppear.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FruitSpawn.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/menu.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2SGYdTYh7vDnNOtkrYLCNw7NyeR" />
@@ -91,7 +109,7 @@
       <updated>1688774477085</updated>
       <workItem from="1688774483436" duration="400000" />
       <workItem from="1688812162781" duration="280000" />
-      <workItem from="1688812648593" duration="7974000" />
+      <workItem from="1688812648593" duration="8535000" />
     </task>
     <servers />
   </component>
