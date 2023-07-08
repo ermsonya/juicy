@@ -8,6 +8,9 @@ TagManager:
   - bigcut
   - smallcut
   - ground
+  - smallfruit
+  - mediumfruit
+  - bigfruit
   layers:
   - Default
   - TransparentFX
