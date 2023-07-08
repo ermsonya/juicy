@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cdfaf84f-57a7-4c70-86e5-46f096ba9226" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.juicy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.juicy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FruitSpawn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FruitSpawn.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FruitBig.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FruitBig.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FruitMedium.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FruitMedium.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FruitSmall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FruitSmall.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FruitSpawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FruitSpawn.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
@@ -19,6 +21,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/17484a9af6b944dea5cd9be4dbb0da2c171c00/1e/01cea0bd/PlayerPrefs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CutAppear.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FruitSpawn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/menu.cs" root0="FORCE_HIGHLIGHTING" />
@@ -97,7 +100,7 @@
       <updated>1688774477085</updated>
       <workItem from="1688774483436" duration="400000" />
       <workItem from="1688812162781" duration="280000" />
-      <workItem from="1688812648593" duration="14279000" />
+      <workItem from="1688812648593" duration="22574000" />
     </task>
     <servers />
   </component>
