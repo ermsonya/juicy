@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cdfaf84f-57a7-4c70-86e5-46f096ba9226" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.juicy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.juicy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CutAppear.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CutAppear.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CutManagement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CutManagement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManagment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManagment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/mainmenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/mainmenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/menu.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +22,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CutAppear.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CutManagement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FruitSpawn.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/change.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/menu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2SGYdTYh7vDnNOtkrYLCNw7NyeR" />

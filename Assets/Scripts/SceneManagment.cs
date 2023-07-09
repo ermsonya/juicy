@@ -17,8 +17,7 @@ public class SceneManagment : MonoBehaviour
     public static int health;
     public static bool isGameStarted;
     public static bool gameOver;
-    private bool _loseSound;
-
+    
     public GameObject tutorialPanel;
     public GameObject gameOverPanel;
     public GameObject startText;
@@ -47,7 +46,6 @@ public class SceneManagment : MonoBehaviour
         if (health == 0)
         {
             gameOver = true;
-            _loseSound = true;
             health--;
             FindObjectOfType<AudioManager>().Play("lose");
             FindObjectOfType<AudioManager>().Stop("background");
