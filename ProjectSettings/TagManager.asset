@@ -12,6 +12,7 @@ TagManager:
   - mediumfruit
   - bigfruit
   - notactive
+  - health
   layers:
   - Default
   - TransparentFX

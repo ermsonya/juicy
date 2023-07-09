@@ -5,7 +5,9 @@ using UnityEngine;
 public class CutManagement : MonoBehaviour
 {
     private FruitSpawn _fruitSpawn;
-    
+
+    public static bool isHit;
+
     void Start()
     {
         _fruitSpawn = GameObject.Find("FruitSpawner").GetComponent<FruitSpawn>();
@@ -20,6 +22,8 @@ public class CutManagement : MonoBehaviour
             SceneManagment.numberScore += 1;
             _fruitSpawn.DeleteFruit(gameObject);
             Debug.Log("yes");
+
+            isHit = true;
         }
     }
 }

@@ -18,14 +18,13 @@ public class FruitSpawn : MonoBehaviour
     private GameObject _mainFruit;
     private Rigidbody2D _fruitRigidbody2D;
     private Transform _fruitTransform;
+    private int _fruitIndex = 1;
 
     private Vector3 _startPos;
     private Vector3 _endPos;
-    Vector3 _fruitDirection;
+    private Vector3 _fruitDirection;
 
-    private int _fruitIndex = 1;
     private bool _isPressed;
-    private bool _isFly;
     private bool _isCooldown;
     private IEnumerator _coroutine;
 
@@ -55,14 +54,10 @@ public class FruitSpawn : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             if (!_isCooldown)
-            {
                 DeleteFruit(_mainFruit);
-            }
             else
-            {
                 StopCoroutine(_coroutine);
-            }
-            
+
             _fruitIndex = 0;
             SpawnFruit(_fruitIndex);
             
@@ -71,31 +66,21 @@ public class FruitSpawn : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             if (!_isCooldown)
-            {
                 DeleteFruit(_mainFruit);
-            }
             else
-            {
                 StopCoroutine(_coroutine);
-            }
-            
+
             _fruitIndex = 1;
             SpawnFruit(_fruitIndex);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            
-            
             if (!_isCooldown)
-            {
                 DeleteFruit(_mainFruit);
-            }
             else
-            {
                 StopCoroutine(_coroutine);
-            }
-            
+
             _fruitIndex = 2;
             SpawnFruit(_fruitIndex);
         }
@@ -105,7 +90,6 @@ public class FruitSpawn : MonoBehaviour
     {
         Destroy(fruit);
         _fruitsList.Remove(fruit);
-        _isFly = false;
     }
 
     private void SpawnFruit(int fruitIndex)
@@ -120,7 +104,7 @@ public class FruitSpawn : MonoBehaviour
         _fruitsList.Add(_mainFruit);
     }
 
-    private IEnumerator SpawnFruitCoroutine(int fruitIndex)
+    private IEnumerator SpawnFruitCooldown(int fruitIndex)
     {
         yield return new WaitForSeconds(fruitCooldown);
         SpawnFruit(fruitIndex);
@@ -158,7 +142,6 @@ public class FruitSpawn : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Mouse0) && _isPressed)
         {
             _isPressed = false;
-            _isFly = true;
             _endPos = GetMousePosition();
 
             if (_fruitDirection.magnitude < maxDistance)
@@ -170,10 +153,10 @@ public class FruitSpawn : MonoBehaviour
             Debug.Log(_startPos + " a " + _endPos);
             _fruitRigidbody2D.AddForce(-_fruitDirection * fruitSpeed, ForceMode2D.Impulse);
 
-            _coroutine = SpawnFruitCoroutine(_fruitIndex);
+            _coroutine = SpawnFruitCooldown(_fruitIndex);
             StartCoroutine(_coroutine);
-            
             StartCoroutine(SetCooldown());
+            
             _fruitDirection = Vector3.zero;
         }
     }

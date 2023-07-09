@@ -3,46 +3,69 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 public class SceneManagment : MonoBehaviour
 {
     public TextMeshProUGUI record;
     public TextMeshProUGUI score;
-    public static int numberScore;
 
-    public static bool gameOver;
-    public GameObject gameOverPanel;
+    public int maxHealth = 5;
+    
+    public static int numberScore = 0;
+    public static int health;
     public static bool isGameStarted;
+    public static bool gameOver;
+
+    public GameObject gameOverPanel;
     public GameObject startText;
+    
+    private static List<GameObject> _healthList = new List<GameObject>();
 
-
-    // Start is called before the first frame update
     void Start()
     {
         record.text = "Record: " + PlayerPrefs.GetInt("Record", 0).ToString();
-        gameOver = false;
         Time.timeScale = 1;
         isGameStarted = false;
+        gameOver = false;
         numberScore = 0;
+        health = maxHealth;
+
+        foreach (GameObject healthTile in GameObject.FindGameObjectsWithTag("health"))
+            _healthList.Add(healthTile);
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (health <= 0)
+            gameOver = true;
+
         if (gameOver)
         {
             Time.timeScale = 0;
             gameOverPanel.SetActive(true);
         }
+
         score.text = "" + numberScore;
         if (numberScore > PlayerPrefs.GetInt("Record", 0))
         {
             PlayerPrefs.SetInt("Record", numberScore);
             record.text = "Record: " + numberScore.ToString();
         }
+
         if (Input.GetMouseButton(0))
         {
             isGameStarted = true;
             Destroy(startText);
         }
+    }
+
+    public static void RemoveHealth()
+    {
+        if (health <= 0)
+            return;
+
+        health--;
+        Destroy(_healthList[^1]);
+        _healthList.Remove(_healthList[^1]);
     }
 }

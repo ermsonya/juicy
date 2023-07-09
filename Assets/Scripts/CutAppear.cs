@@ -12,19 +12,15 @@ public class CutAppear : MonoBehaviour
     public float maxy;
     private bool timeIsUp = true;
     private string maintag;
-    
-    void Start()
-    {
-       
-    }
 
     void Update()
     {
-       if (timeIsUp && SceneManagment.isGameStarted)
-       {
+        if (timeIsUp && SceneManagment.isGameStarted)
+        {
             StartCoroutine(WaitforReal());
         }
     }
+
     public void SpawnTile(int tileIndex)
     {
         var wantedx = Random.Range(minx, maxx);
@@ -36,26 +32,36 @@ public class CutAppear : MonoBehaviour
         maintag = go.tag;
         go.tag = "notactive";
     }
+
     public void SpawnTileReal()
     {
         activeTiles[0].SetActive(true);
         activeTiles[0].tag = maintag;
-        
+
         // GameObject go = Instantiate(activeTiles[0], transform.position, transform.rotation);
         //  activeTiles.Add(go);
     }
+
     //нужно поменять тег и картину
     private void DeleteTile()
     {
         activeTiles[0].SetActive(false);
         //activeTiles.RemoveAt(0);
     }
+
     private void DeleteAll()
     {
-       // Destroy(activeTiles[1]);
+        // Destroy(activeTiles[1]);
         Destroy(activeTiles[0]);
         activeTiles.RemoveAt(0);
-      //  activeTiles.RemoveAt(1);
+
+        if (!CutManagement.isHit)
+        {
+            SceneManagment.RemoveHealth();
+        }
+
+        CutManagement.isHit = false;
+        //  activeTiles.RemoveAt(1);
     }
 
     private IEnumerator WaitforReal()
@@ -72,4 +78,3 @@ public class CutAppear : MonoBehaviour
         timeIsUp = true;
     }
 }
-
