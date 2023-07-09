@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdfaf84f-57a7-4c70-86e5-46f096ba9226" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.juicy/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.juicy/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.juicy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.juicy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CutAppear.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CutAppear.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CutManagement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CutManagement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FruitSpawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FruitSpawn.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManagment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManagment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/menu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +100,7 @@
       <workItem from="1688812162781" duration="280000" />
       <workItem from="1688812648593" duration="32507000" />
       <workItem from="1688861867122" duration="6368000" />
+      <workItem from="1688900111256" duration="3338000" />
     </task>
     <servers />
   </component>

@@ -26,20 +26,30 @@ public class FruitSpawn : MonoBehaviour
 
     private bool _isPressed;
     private bool _isCooldown;
+    private bool _firstSpawn = true;
     private IEnumerator _coroutine;
 
     void Start()
     {
         _mainCamera = Camera.main;
-
-        SpawnFruit(1);
     }
 
     void Update()
     {
-        SelectFruit();
-        FruitMove();
-
+        if (SceneManagment.isGameStarted)
+        {
+            if (!_firstSpawn)
+            {
+                SelectFruit();
+                FruitMove();
+            }
+            else
+            {
+                SpawnFruit(1);
+                _firstSpawn = false;
+            }
+        }
+        
         foreach (GameObject fruit in _fruitsList.ToList())
         {
             if (groundColliders.Any(groundCollider => fruit.GetComponent<Collider2D>().IsTouching(groundCollider)))
@@ -60,7 +70,6 @@ public class FruitSpawn : MonoBehaviour
 
             _fruitIndex = 0;
             SpawnFruit(_fruitIndex);
-            
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -127,7 +136,7 @@ public class FruitSpawn : MonoBehaviour
             _startPos = GetMousePosition();
             _isPressed = true;
         }
-        
+
         if (_isPressed)
         {
             Vector3 pos = GetMousePosition();
@@ -156,7 +165,7 @@ public class FruitSpawn : MonoBehaviour
             _coroutine = SpawnFruitCooldown(_fruitIndex);
             StartCoroutine(_coroutine);
             StartCoroutine(SetCooldown());
-            
+
             _fruitDirection = Vector3.zero;
         }
     }
