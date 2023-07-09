@@ -67,7 +67,7 @@ public class FruitSpawn : MonoBehaviour
                 DeleteFruit(_mainFruit);
             else
                 StopCoroutine(_coroutine);
-            _fruitIndex = Random.Range(0, 1)
+            _fruitIndex = Random.Range(0, 3);
            // _fruitIndex = 0;
             SpawnFruit(_fruitIndex);
         }
@@ -78,7 +78,7 @@ public class FruitSpawn : MonoBehaviour
                 DeleteFruit(_mainFruit);
             else
                 StopCoroutine(_coroutine);
-            _fruitIndex =Random.Range(2, 3)
+            _fruitIndex = Random.Range(3, 5);
             //_fruitIndex = 1;
             SpawnFruit(_fruitIndex);
         }
@@ -89,7 +89,7 @@ public class FruitSpawn : MonoBehaviour
                 DeleteFruit(_mainFruit);
             else
                 StopCoroutine(_coroutine);
-            _fruitIndex = Random.Range(4, 5)
+            _fruitIndex = Random.Range(5, 7);
             //_fruitIndex = 2;
             SpawnFruit(_fruitIndex);
         }
