@@ -75,25 +75,23 @@ public class CutAppear : MonoBehaviour
     {
         timeIsUp = false;
         yield return new WaitForSeconds(1f);
-<<<<<<< Updated upstream
+
 
         randomInt = Random.Range(0, 3);
         SpawnTile(randomInt);
-        yield return new WaitForSeconds(1f);
+     
 
-        DeleteTile();
-        yield return new WaitForSeconds(2f);
+       // DeleteTile();
+       // yield return new WaitForSeconds(2f);
 
-=======
-        SpawnTile(Random.Range(0, 3));
->>>>>>> Stashed changes
+
         SpawnTileReal();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
        //DeleteTile();
        // yield return new WaitForSeconds(2f);
        // change = true;
         
-        yield return new WaitForSeconds(2f);
+      
 
         DeleteAll();
         //change = false;
