@@ -19,7 +19,7 @@ public class CutManagement : MonoBehaviour
         if (other.tag == gameObject.tag)
         {
             //FindObjectOfType<AudioManager>().PlaySound("");
-            SceneManagment.numberScore += 1;
+            SceneManagment.numberScore += 5;
             _fruitSpawn.DeleteFruit(gameObject);
             Debug.Log("yes");
 

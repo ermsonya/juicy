@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8079985821191130566}
   - component: {fileID: 4201911396768033437}
   - component: {fileID: -1984309767016470610}
+  - component: {fileID: -6557922698175817615}
   m_Layer: 0
   m_Name: Cut3
   m_TagString: smallcut
@@ -27,12 +28,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3462164862608012983}
   m_LocalRotation: {x: -0, y: -0, z: 0.25149116, w: 0.96785957}
-  m_LocalPosition: {x: -1.6944, y: 0.3623, z: 0}
-  m_LocalScale: {x: 0.11141162, y: 0.68978006, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 29.132}
 --- !u!212 &8079985821191130566
 SpriteRenderer:
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 78fceae511eef8446b6db6f4719b57cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,8 +119,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.57, y: 2.27}
+  m_Offset: {x: -0.0071863327, y: 0.00923652}
+  m_Size: {x: 0.29150704, y: 1.2682416}
   m_Direction: 0
 --- !u!114 &-1984309767016470610
 MonoBehaviour:
@@ -133,3 +134,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26b4a6005c0c0f346961754ff2df1f4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6557922698175817615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3462164862608012983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e506a48d4e06d84580ee3c0a4726994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 8079985821191130566}
+  newSprite: {fileID: 21300000, guid: 5eb352669a377294bb63f62dc6414451, type: 3}
+  usualSprite: {fileID: 21300000, guid: 78fceae511eef8446b6db6f4719b57cc, type: 3}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7162154083713915358}
   - component: {fileID: 5365112033777619033}
   - component: {fileID: -975020920426557814}
+  - component: {fileID: -1897733815462984037}
   m_Layer: 0
   m_Name: Cut1
   m_TagString: middlecut
@@ -27,12 +28,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849343859074250343}
   m_LocalRotation: {x: -0, y: -0, z: 0.25149116, w: 0.96785957}
-  m_LocalPosition: {x: 1.0233, y: 0.9818, z: 0}
-  m_LocalScale: {x: 0.2867, y: 1.0382, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 1.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 29.132}
 --- !u!212 &7162154083713915358
 SpriteRenderer:
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7cc6a2bda42a0f0479a7229cd8501560, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,8 +119,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.57, y: 2.27}
+  m_Offset: {x: 0.00000028322805, y: 0.012841344}
+  m_Size: {x: 0.29209659, y: 1.2840474}
   m_Direction: 0
 --- !u!114 &-975020920426557814
 MonoBehaviour:
@@ -133,3 +134,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26b4a6005c0c0f346961754ff2df1f4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1897733815462984037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849343859074250343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e506a48d4e06d84580ee3c0a4726994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7162154083713915358}
+  newSprite: {fileID: 21300000, guid: 5eb352669a377294bb63f62dc6414451, type: 3}
+  usualSprite: {fileID: 21300000, guid: 7cc6a2bda42a0f0479a7229cd8501560, type: 3}

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class CutAppear : MonoBehaviour
 {
     public GameObject[] tileprefabs;
@@ -13,6 +13,11 @@ public class CutAppear : MonoBehaviour
     private bool timeIsUp = true;
     private string maintag;
     public static int randomInt;
+
+    public static bool change=false;
+
+  //  public SpriteRenderer spriteRenderer;
+  //  public Sprite newSprite;
 
     void Update()
     {
@@ -31,8 +36,8 @@ public class CutAppear : MonoBehaviour
 
         GameObject go = Instantiate(tileprefabs[tileIndex], position, newQuaternion);
         activeTiles.Add(go);
-        maintag = go.tag;
-        go.tag = "notactive";
+      // maintag = go.tag;
+      //  go.tag = "notactive";
     }
 
     public void SpawnTileReal()
@@ -70,6 +75,7 @@ public class CutAppear : MonoBehaviour
     {
         timeIsUp = false;
         yield return new WaitForSeconds(1f);
+<<<<<<< Updated upstream
 
         randomInt = Random.Range(0, 3);
         SpawnTile(randomInt);
@@ -78,10 +84,19 @@ public class CutAppear : MonoBehaviour
         DeleteTile();
         yield return new WaitForSeconds(2f);
 
+=======
+        SpawnTile(Random.Range(0, 3));
+>>>>>>> Stashed changes
         SpawnTileReal();
+        yield return new WaitForSeconds(1f);
+       //DeleteTile();
+       // yield return new WaitForSeconds(2f);
+       // change = true;
+        
         yield return new WaitForSeconds(2f);
 
         DeleteAll();
+        //change = false;
         timeIsUp = true;
     }
 }
