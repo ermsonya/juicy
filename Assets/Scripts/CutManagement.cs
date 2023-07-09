@@ -24,6 +24,19 @@ public class CutManagement : MonoBehaviour
             Debug.Log("yes");
 
             isHit = true;
+            
+            switch (CutAppear.randomInt)
+            {
+                case 0:
+                    FindObjectOfType<AudioManager>().Play("knife_big");
+                    break;
+                case 1:
+                    FindObjectOfType<AudioManager>().Play("knife_medium");
+                    break;
+                case 2:
+                    FindObjectOfType<AudioManager>().Play("knife_small");
+                    break;
+            }
         }
     }
 }

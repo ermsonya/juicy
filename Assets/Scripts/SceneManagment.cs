@@ -17,6 +17,7 @@ public class SceneManagment : MonoBehaviour
     public static int health;
     public static bool isGameStarted;
     public static bool gameOver;
+    private bool _loseSound;
 
     public GameObject tutorialPanel;
     public GameObject gameOverPanel;
@@ -37,12 +38,20 @@ public class SceneManagment : MonoBehaviour
             _healthList.Add(healthTile);
 
         StartCoroutine(TimerSchedule());
+        
+        FindObjectOfType<AudioManager>().Play("background");
     }
 
     void Update()
     {
-        if (health <= 0)
+        if (health == 0)
+        {
             gameOver = true;
+            _loseSound = true;
+            health--;
+            FindObjectOfType<AudioManager>().Play("lose");
+            FindObjectOfType<AudioManager>().Stop("background");
+        }
 
         if (gameOver)
         {

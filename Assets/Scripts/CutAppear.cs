@@ -12,6 +12,7 @@ public class CutAppear : MonoBehaviour
     public float maxy;
     private bool timeIsUp = true;
     private string maintag;
+    public static int randomInt;
 
     void Update()
     {
@@ -26,7 +27,7 @@ public class CutAppear : MonoBehaviour
         var wantedx = Random.Range(minx, maxx);
         var wantedy = Random.Range(miny, maxy);
         var position = new Vector3(wantedx, wantedy);
-        Quaternion newQuaternion = new Quaternion(0,0,Random.Range(10, 130),1);
+        Quaternion newQuaternion = new Quaternion(0, 0, Random.Range(10, 130), 1);
 
         GameObject go = Instantiate(tileprefabs[tileIndex], position, newQuaternion);
         activeTiles.Add(go);
@@ -59,22 +60,27 @@ public class CutAppear : MonoBehaviour
         if (!CutManagement.isHit)
         {
             SceneManagment.RemoveHealth();
+            FindObjectOfType<AudioManager>().Play("knife_miss");
         }
 
         CutManagement.isHit = false;
-        //  activeTiles.RemoveAt(1);
     }
 
     private IEnumerator WaitforReal()
     {
         timeIsUp = false;
         yield return new WaitForSeconds(1f);
-        SpawnTile(Random.Range(0, 3));
+
+        randomInt = Random.Range(0, 3);
+        SpawnTile(randomInt);
         yield return new WaitForSeconds(1f);
+
         DeleteTile();
         yield return new WaitForSeconds(2f);
+
         SpawnTileReal();
         yield return new WaitForSeconds(2f);
+
         DeleteAll();
         timeIsUp = true;
     }

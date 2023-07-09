@@ -45,8 +45,6 @@ public class Menu : MonoBehaviour
     }
     void Update()
     {
-
-
         if (Input.GetKey(KeyCode.Escape))
         {
             Time.timeScale = 0;
