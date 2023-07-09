@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class CutManagement : MonoBehaviour
 {
+    private FruitSpawn _fruitSpawn;
+    
     void Start()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        _fruitSpawn = GameObject.Find("FruitSpawner").GetComponent<FruitSpawn>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -21,7 +18,7 @@ public class CutManagement : MonoBehaviour
         {
             //FindObjectOfType<AudioManager>().PlaySound("");
             SceneManagment.numberScore += 1;
-            Destroy(gameObject);
+            _fruitSpawn.DeleteFruit(gameObject);
             Debug.Log("yes");
         }
     }

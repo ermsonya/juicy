@@ -830,7 +830,7 @@ GameObject:
   - component: {fileID: 417807747}
   - component: {fileID: 417807746}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: Ground 2
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1187,7 +1187,7 @@ GameObject:
   - component: {fileID: 1277212573}
   - component: {fileID: 1277212572}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: Ground 3
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1317,7 +1317,7 @@ GameObject:
   - component: {fileID: 1435945411}
   - component: {fileID: 1435945410}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Ground 1
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1599,7 +1599,7 @@ GameObject:
   - component: {fileID: 1668771539}
   - component: {fileID: 1668771538}
   m_Layer: 0
-  m_Name: Square (3)
+  m_Name: Ground 4
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

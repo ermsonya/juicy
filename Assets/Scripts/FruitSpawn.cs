@@ -27,6 +27,7 @@ public class FruitSpawn : MonoBehaviour
     private bool _isPressed;
     private bool _isFly;
     private bool _isCooldown;
+    private IEnumerator _coroutine;
 
     void Start()
     {
@@ -40,11 +41,8 @@ public class FruitSpawn : MonoBehaviour
         SelectFruit();
         FruitMove();
 
-        Debug.Log(_fruitsList.Count);
-        Debug.Log(_fruitsList);
         foreach (GameObject fruit in _fruitsList.ToList())
         {
-            
             if (groundColliders.Any(groundCollider => fruit.GetComponent<Collider2D>().IsTouching(groundCollider)))
             {
                 DeleteFruit(fruit);
@@ -56,7 +54,14 @@ public class FruitSpawn : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            StopCoroutine(SpawnFruitCoroutine(_fruitIndex));
+            if (!_isCooldown)
+            {
+                DeleteFruit(_mainFruit);
+            }
+            else
+            {
+                StopCoroutine(_coroutine);
+            }
             
             _fruitIndex = 0;
             SpawnFruit(_fruitIndex);
@@ -65,20 +70,38 @@ public class FruitSpawn : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            StopCoroutine(SpawnFruitCoroutine(_fruitIndex));
+            if (!_isCooldown)
+            {
+                DeleteFruit(_mainFruit);
+            }
+            else
+            {
+                StopCoroutine(_coroutine);
+            }
+            
             _fruitIndex = 1;
             SpawnFruit(_fruitIndex);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            StopCoroutine(SpawnFruitCoroutine(_fruitIndex));
+            
+            
+            if (!_isCooldown)
+            {
+                DeleteFruit(_mainFruit);
+            }
+            else
+            {
+                StopCoroutine(_coroutine);
+            }
+            
             _fruitIndex = 2;
             SpawnFruit(_fruitIndex);
         }
     }
 
-    private void DeleteFruit(GameObject fruit)
+    public void DeleteFruit(GameObject fruit)
     {
         Destroy(fruit);
         _fruitsList.Remove(fruit);
@@ -99,10 +122,14 @@ public class FruitSpawn : MonoBehaviour
 
     private IEnumerator SpawnFruitCoroutine(int fruitIndex)
     {
-        _isCooldown = true;
-        
         yield return new WaitForSeconds(fruitCooldown);
         SpawnFruit(fruitIndex);
+    }
+
+    private IEnumerator SetCooldown()
+    {
+        _isCooldown = true;
+        yield return new WaitForSeconds(fruitCooldown);
         _isCooldown = false;
     }
 
@@ -116,13 +143,11 @@ public class FruitSpawn : MonoBehaviour
             _startPos = GetMousePosition();
             _isPressed = true;
         }
-
-
+        
         if (_isPressed)
         {
             Vector3 pos = GetMousePosition();
             _fruitDirection = pos - _startPos;
-            Debug.Log(_fruitDirection + " " + _fruitDirection.magnitude);
 
             if (_fruitDirection.magnitude <= maxDistance)
                 _fruitTransform.position = transform.position + pos - _startPos;
@@ -130,7 +155,7 @@ public class FruitSpawn : MonoBehaviour
                 _fruitTransform.position = transform.position + (pos - _startPos).normalized * maxDistance;
         }
 
-        if (Input.GetKeyUp(KeyCode.Mouse0))
+        if (Input.GetKeyUp(KeyCode.Mouse0) && _isPressed)
         {
             _isPressed = false;
             _isFly = true;
@@ -142,9 +167,13 @@ public class FruitSpawn : MonoBehaviour
                 _fruitDirection = (_endPos - _startPos).normalized * maxDistance;
 
             _fruitRigidbody2D.constraints = RigidbodyConstraints2D.None;
+            Debug.Log(_startPos + " a " + _endPos);
             _fruitRigidbody2D.AddForce(-_fruitDirection * fruitSpeed, ForceMode2D.Impulse);
 
-            StartCoroutine(SpawnFruitCoroutine(_fruitIndex));
+            _coroutine = SpawnFruitCoroutine(_fruitIndex);
+            StartCoroutine(_coroutine);
+            
+            StartCoroutine(SetCooldown());
             _fruitDirection = Vector3.zero;
         }
     }
