@@ -50,13 +50,19 @@ public class FruitSpawn : MonoBehaviour
                 _firstSpawn = false;
             }
         }
-        
+
         foreach (GameObject fruit in _fruitsList.ToList())
         {
             if (groundColliders.Any(groundCollider => fruit.GetComponent<Collider2D>().IsTouching(groundCollider)))
             {
                 DeleteFruit(fruit);
             }
+        }
+
+        foreach (GameObject fruit in _fruitsList)
+        {
+            if (fruit.GetComponent<Rigidbody2D>().constraints == RigidbodyConstraints2D.None)
+                fruit.transform.Rotate(0, 0, 1);
         }
     }
 
