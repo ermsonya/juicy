@@ -18,7 +18,7 @@ public class FruitSpawn : MonoBehaviour
     private GameObject _mainFruit;
     private Rigidbody2D _fruitRigidbody2D;
     private Transform _fruitTransform;
-    private int _fruitIndex = 1;
+    private int _fruitIndex = 2;
 
     private Vector3 _startPos;
     private Vector3 _endPos;
@@ -67,8 +67,8 @@ public class FruitSpawn : MonoBehaviour
                 DeleteFruit(_mainFruit);
             else
                 StopCoroutine(_coroutine);
-
-            _fruitIndex = 0;
+            _fruitIndex = Random.Range(0, 1)
+           // _fruitIndex = 0;
             SpawnFruit(_fruitIndex);
         }
 
@@ -78,8 +78,8 @@ public class FruitSpawn : MonoBehaviour
                 DeleteFruit(_mainFruit);
             else
                 StopCoroutine(_coroutine);
-
-            _fruitIndex = 1;
+            _fruitIndex =Random.Range(2, 3)
+            //_fruitIndex = 1;
             SpawnFruit(_fruitIndex);
         }
 
@@ -89,8 +89,8 @@ public class FruitSpawn : MonoBehaviour
                 DeleteFruit(_mainFruit);
             else
                 StopCoroutine(_coroutine);
-
-            _fruitIndex = 2;
+            _fruitIndex = Random.Range(4, 5)
+            //_fruitIndex = 2;
             SpawnFruit(_fruitIndex);
         }
     }

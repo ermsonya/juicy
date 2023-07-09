@@ -50,7 +50,7 @@ public class SceneManagment : MonoBehaviour
             gameOverPanel.SetActive(true);
         }
 
-        score.text = "" + numberScore;
+        score.text = "Score: " + numberScore;
         if (numberScore > PlayerPrefs.GetInt("Record", 0))
         {
             PlayerPrefs.SetInt("Record", numberScore);
