@@ -3278,6 +3278,91 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521898496}
   m_CullTransparentMesh: 1
+--- !u!1 &1530274552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1530274554}
+  - component: {fileID: 1530274553}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1530274553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530274552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42335e441d27cf44ba273b68d6f6911c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: button_click
+    clip: {fileID: 8300000, guid: 524dbe920a96d0d4d829b5b44f2715c9, type: 3}
+    volume: 0.05
+    pitch: 1
+    source: {fileID: 0}
+  - name: button_hover
+    clip: {fileID: 8300000, guid: eeef1e32b8c48114dbd12d8d28b5d106, type: 3}
+    volume: 0.05
+    pitch: 1
+    source: {fileID: 0}
+  - name: knife_big
+    clip: {fileID: 8300000, guid: 3d181678a09464846bff83d4cce3f88d, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+  - name: knife_medium
+    clip: {fileID: 8300000, guid: f948b4d16faed5d40b3d63cfebf63aa7, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+  - name: knife_small
+    clip: {fileID: 8300000, guid: 781795a5443ed1243a0d24752cb0eafc, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+  - name: knife_miss
+    clip: {fileID: 8300000, guid: 457dff3cce849c44c84ecf2276fd5459, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+  - name: lose
+    clip: {fileID: 8300000, guid: 19b39f2c7ad53234695d9167f2c517c9, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+  - name: background
+    clip: {fileID: 8300000, guid: f35e082151285874d95235137025c9a5, type: 3}
+    volume: 0.05
+    pitch: 1
+    source: {fileID: 0}
+--- !u!4 &1530274554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530274552}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.12579145, y: 1.2854006, z: -0.037841395}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1558999016
 GameObject:
   m_ObjectHideFlags: 0
