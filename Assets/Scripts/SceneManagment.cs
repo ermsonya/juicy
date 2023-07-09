@@ -8,7 +8,7 @@ public class SceneManagment : MonoBehaviour
 {
     public TextMeshProUGUI record;
     public TextMeshProUGUI score;
-    public TextMeshProUGUI timerText;
+    //public TextMeshProUGUI timerText;
 
     public int maxHealth = 5;
     public int timerSeconds = 3;
@@ -79,19 +79,19 @@ public class SceneManagment : MonoBehaviour
     {
         tutorialPanel.SetActive(true);
         startText.SetActive(false);
-        timerText.text = timerSeconds.ToString();
+       // timerText.text = timerSeconds.ToString();
 
         while (timerSeconds > 0)
         {
             yield return new WaitForSeconds(1f);
 
             timerSeconds--;
-            timerText.text = timerSeconds.ToString();
+       //     timerText.text = timerSeconds.ToString();
         }
 
         if (timerSeconds == 0)
         {
-            timerText.gameObject.SetActive(false);
+          //  timerText.gameObject.SetActive(false);
             startText.SetActive(true);
         }
     }
