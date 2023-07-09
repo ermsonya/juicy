@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7379510843920255741}
   - component: {fileID: -8864908491084052127}
   m_Layer: 0
-  m_Name: FruitMedium
+  m_Name: FruitMedium 1
   m_TagString: middlecut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e0bed7c9dc9496e43a47f39b96e308bc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb3697634100c87469cc6605ec6f8e01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
