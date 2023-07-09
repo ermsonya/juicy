@@ -11,7 +11,7 @@ public class SceneManagment : MonoBehaviour
     public TextMeshProUGUI timerText;
 
     public int maxHealth = 5;
-    public int timerSeconds = 5;
+    public int timerSeconds = 3;
 
     public static int numberScore = 0;
     public static int health;
@@ -79,6 +79,7 @@ public class SceneManagment : MonoBehaviour
     {
         tutorialPanel.SetActive(true);
         startText.SetActive(false);
+        timerText.text = timerSeconds.ToString();
 
         while (timerSeconds > 0)
         {
