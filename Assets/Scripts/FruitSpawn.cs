@@ -11,6 +11,7 @@ public class FruitSpawn : MonoBehaviour
     public float fruitSpeed = 9;
     public float maxDistance = 2f;
     public float fruitCooldown = 0.75f;
+    public float inaccuracy = 0.1f;
 
     private Camera _mainCamera;
 
@@ -18,7 +19,7 @@ public class FruitSpawn : MonoBehaviour
     private GameObject _mainFruit;
     private Rigidbody2D _fruitRigidbody2D;
     private Transform _fruitTransform;
-    private int _fruitIndex = 2;
+    private int _fruitIndex = 1;
 
     private Vector3 _startPos;
     private Vector3 _endPos;
@@ -45,7 +46,7 @@ public class FruitSpawn : MonoBehaviour
             }
             else
             {
-                SpawnFruit(1);
+                SpawnFruit();
                 _firstSpawn = false;
             }
         }
@@ -63,47 +64,32 @@ public class FruitSpawn : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (!_isCooldown)
-                DeleteFruit(_mainFruit);
-            else
-            {
-                StopCoroutine(_coroutine);
-                if (_fruitsList.Count > 1)
-                    DeleteFruit(_fruitsList[^1]);
-            }
             _fruitIndex = Random.Range(0, 3);
-            
-            SpawnFruit(_fruitIndex);
+            if (!_isCooldown)
+            {
+                DeleteFruit(_mainFruit);
+                SpawnFruit();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            if (!_isCooldown)
-                DeleteFruit(_mainFruit);
-            else
-            {
-                StopCoroutine(_coroutine);
-                if (_fruitsList.Count > 1)
-                    DeleteFruit(_fruitsList[^1]);
-            }
             _fruitIndex = Random.Range(3, 5);
-            
-            SpawnFruit(_fruitIndex);
+            if (!_isCooldown)
+            {
+                DeleteFruit(_mainFruit);
+                SpawnFruit();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            if (!_isCooldown)
-                DeleteFruit(_mainFruit);
-            else
-            {
-                StopCoroutine(_coroutine);
-                if (_fruitsList.Count > 1)
-                    DeleteFruit(_fruitsList[^1]);
-            }
             _fruitIndex = Random.Range(5, 7);
-            
-            SpawnFruit(_fruitIndex);
+            if (!_isCooldown)
+            {
+                DeleteFruit(_mainFruit);
+                SpawnFruit();
+            }
         }
     }
 
@@ -113,9 +99,9 @@ public class FruitSpawn : MonoBehaviour
         _fruitsList.Remove(fruit);
     }
 
-    private void SpawnFruit(int fruitIndex)
+    private void SpawnFruit()
     {
-        _mainFruit = Instantiate(fruitPrefabs[fruitIndex], transform.position, Quaternion.identity);
+        _mainFruit = Instantiate(fruitPrefabs[_fruitIndex], transform.position, Quaternion.identity);
 
         _fruitRigidbody2D = _mainFruit.GetComponent<Rigidbody2D>();
         _fruitRigidbody2D.constraints = RigidbodyConstraints2D.FreezePosition;
@@ -125,10 +111,10 @@ public class FruitSpawn : MonoBehaviour
         _fruitsList.Add(_mainFruit);
     }
 
-    private IEnumerator SpawnFruitCooldown(int fruitIndex)
+    private IEnumerator SpawnFruitCooldown()
     {
         yield return new WaitForSeconds(fruitCooldown);
-        SpawnFruit(fruitIndex);
+        SpawnFruit();
     }
 
     private IEnumerator SetCooldown()
@@ -170,15 +156,18 @@ public class FruitSpawn : MonoBehaviour
             else
                 _fruitDirection = (_endPos - _startPos).normalized * maxDistance;
 
-            _fruitRigidbody2D.constraints = RigidbodyConstraints2D.None;
-            Debug.Log(_startPos + " a " + _endPos);
-            _fruitRigidbody2D.AddForce(-_fruitDirection * fruitSpeed, ForceMode2D.Impulse);
+            if (_fruitDirection.magnitude > inaccuracy)
+            {
+                _fruitRigidbody2D.constraints = RigidbodyConstraints2D.None;
 
-            _coroutine = SpawnFruitCooldown(_fruitIndex);
-            StartCoroutine(_coroutine);
-            StartCoroutine(SetCooldown());
+                _fruitRigidbody2D.AddForce(-_fruitDirection * fruitSpeed, ForceMode2D.Impulse);
 
-            _fruitDirection = Vector3.zero;
+                _coroutine = SpawnFruitCooldown();
+                StartCoroutine(_coroutine);
+                StartCoroutine(SetCooldown());
+
+                _fruitDirection = Vector3.zero;
+            }
         }
     }
 
