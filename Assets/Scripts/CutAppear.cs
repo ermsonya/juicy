@@ -26,8 +26,9 @@ public class CutAppear : MonoBehaviour
         var wantedx = Random.Range(minx, maxx);
         var wantedy = Random.Range(miny, maxy);
         var position = new Vector3(wantedx, wantedy);
+        Quaternion newQuaternion = new Quaternion(0,0,Random.Range(10, 130),1);
 
-        GameObject go = Instantiate(tileprefabs[tileIndex], position, transform.rotation);
+        GameObject go = Instantiate(tileprefabs[tileIndex], position, newQuaternion);
         activeTiles.Add(go);
         maintag = go.tag;
         go.tag = "notactive";
