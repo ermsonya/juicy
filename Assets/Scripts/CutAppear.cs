@@ -11,7 +11,7 @@ public class CutAppear : MonoBehaviour
     public float miny;
     public float maxy;
     private bool timeIsUp = true;
-    private string maintag;
+   // private string maintag;
     public static int randomInt;
 
     public static bool change=false;
@@ -43,7 +43,7 @@ public class CutAppear : MonoBehaviour
     public void SpawnTileReal()
     {
         activeTiles[0].SetActive(true);
-        activeTiles[0].tag = maintag;
+        //activeTiles[0].tag = maintag;
 
         // GameObject go = Instantiate(activeTiles[0], transform.position, transform.rotation);
         //  activeTiles.Add(go);
